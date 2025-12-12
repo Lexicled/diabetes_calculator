@@ -86,7 +86,7 @@
     <h2>Constants</h2>
     <form>
         <label for="carbRatio">Carb ratio (g/U)</label>
-        <input type="" name="carbRatio" bind:value={carbRatio}><br>
+        <input type="number" name="carbRatio" bind:value={carbRatio}><br>
 
         <label for="sensitivity">Insulin sensitivity (mmol/U)</label>
         <input type="number" name="sensitivity" bind:value={sensitivity}><br>
