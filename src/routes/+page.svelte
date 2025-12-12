@@ -2,8 +2,11 @@
     import { onMount } from 'svelte';
 
     function setCookie(cname, cvalue) {
-        console.log(cvalue)
-        document.cookie = cname + "=" + cvalue + ";";
+        const exdays = 2000;
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";";
     }
 
     function getCookie(cname) {
