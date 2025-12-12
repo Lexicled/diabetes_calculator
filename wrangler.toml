@@ -1,6 +1,6 @@
 name = "diabetescalculator"
 main = ".svelte-kit/cloudflare/_worker.js"
 compatibility_date = "2025-12-12"
-
-[site]
-bucket = ".svelte-kit/cloudflare"
+site.bucket = ".cloudflare/public"
+assets.directory = ".cloudflare/public"
+assets.binding = "ASSETS" # Exclude this if you don't have a `main` key configured.
