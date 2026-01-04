@@ -28,6 +28,7 @@
     let carbRatio;
     let sensitivity;
     let insTime;
+    let insTimeSens;
     let carbTime;
     let target;
 
@@ -44,6 +45,7 @@
         carbRatio = parseFloat(getCookie("carbRatio"));
         sensitivity = parseFloat(getCookie("sensitivity"));
         insTime = parseFloat(getCookie("insTime"));
+        insTimeSens = parseFloat(getCookie("insTimeSens"));
         carbTime = parseFloat(getCookie("carbTime"));
         target = parseFloat(getCookie("target"));
     }
@@ -52,6 +54,7 @@
         setCookie("carbRatio", carbRatio.toString());
         setCookie("sensitivity", sensitivity.toString());
         setCookie("insTime", insTime.toString());
+        setCookie("insTimeSens", insTimeSens.toString());
         setCookie("carbTime", carbTime.toString());
         setCookie("target", target.toString());
     }
@@ -61,7 +64,7 @@
         let bolusUnits = carbs / carbRatio;
         let totalUnits = adjustmentUnits + bolusUnits;
 
-        let insTimeVar = insTime / totalUnits;
+        let insTimeVar = insTime / (totalUnits ** insTimeSens);
         let timeBeforeMeal = insTimeVar - carbTime;
 
         let outputStr = "";
@@ -91,8 +94,11 @@
         <label for="sensitivity">Insulin sensitivity (mmol/U)</label>
         <input type="number" name="sensitivity" bind:value={sensitivity}><br>
 
-        <label for="insTime">Insulin time constant (U * mins)</label>
+        <label for="insTime">Insulin time constant</label>
         <input type="number" name="insTime" bind:value={insTime}><br>
+
+        <label for="insTimeSens">Insulin time sensitivity constant</label>
+        <input type="number" name="insTimeSens" bind:value={insTimeSens}><br>
 
         <label for="carbTime">Carb time (mins)</label>
         <input type="number" name="carbTime" bind:value={carbTime}><br>
