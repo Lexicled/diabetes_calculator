@@ -86,6 +86,11 @@
 <div>
     <h1>Diabetes Calculator</h1>
 
+    <h2>Links</h2>
+    <ul>
+        <li><a href="/what-tf-is-x">How do I calculate [X]?</a></li>
+    </ul>
+
     <h2>Constants</h2>
     <form>
         <label for="carbRatio">Carb ratio (g/U)</label>
