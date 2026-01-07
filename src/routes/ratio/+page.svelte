@@ -1,7 +1,10 @@
 <script>
-    import carb_ratio from "$lib/assets/carb_ratio.png"
-    import insulin_sensitivity from "$lib/assets/insulin_sensitivity.png"
+    import carb_ratio from "$lib/assets/carb_ratio.png";
+    import insulin_sensitivity from "$lib/assets/insulin_sensitivity.png";
+    import globalCss from "$lib/global.css";
 </script>
+
+<link rel="stylesheet" src="./lib/global.css">
 
 <style>
     img {

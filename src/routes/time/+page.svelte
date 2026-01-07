@@ -1,7 +1,8 @@
 <script>
-    import ins_time_eq from "$lib/assets/ins_time_eq.png"
-    import calc_ins_time_eq_1 from "$lib/assets/calc_ins_time_eq_1.png"
-    import calc_ins_time_eq_2 from "$lib/assets/calc_ins_time_eq_2.png"
+    import ins_time_eq from "$lib/assets/ins_time_eq.png";
+    import calc_ins_time_eq_1 from "$lib/assets/calc_ins_time_eq_1.png";
+    import calc_ins_time_eq_2 from "$lib/assets/calc_ins_time_eq_2.png";
+    import globalCss from "$lib/global.css";
 
     function meanOfTwo(a, b) {
         return (a + b) / 2;
@@ -34,6 +35,7 @@
     }
 </script>
 
+<link rel="stylesheet" src="./lib/global.css">
 <style>
     img {
         max-width: 200px;

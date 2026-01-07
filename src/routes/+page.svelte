@@ -83,6 +83,8 @@
     });
 </script>
 
+<link rel="stylesheet" src="./lib/global.css">
+
 <div>
     <h1>Diabetes Calculator</h1>
 

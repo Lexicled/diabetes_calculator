@@ -1,3 +1,9 @@
+<script>
+    import globalCss from "$lib/global.css";
+</script>
+
+<link rel="stylesheet" src="./lib/global.css">
+
 <div>
     <h1>What is/how do I calculate <i>[x]</i>?</h1>
     <ul>
