@@ -26,6 +26,7 @@
     }
 
     let carbRatio;
+    let carbMod;
     let sensitivity;
     let insTime;
     let insTimeSens;
@@ -43,6 +44,7 @@
 
     function loadCookies() {
         carbRatio = parseFloat(getCookie("carbRatio"));
+        carbMod = parseFloat(getCookie("carbMod"));
         sensitivity = parseFloat(getCookie("sensitivity"));
         insTime = parseFloat(getCookie("insTime"));
         insTimeSens = parseFloat(getCookie("insTimeSens"));
@@ -52,6 +54,7 @@
 
     function saveCookies() {
         setCookie("carbRatio", carbRatio.toString());
+        setCookie("carbMod", carbMod.toString());
         setCookie("sensitivity", sensitivity.toString());
         setCookie("insTime", insTime.toString());
         setCookie("insTimeSens", insTimeSens.toString());
@@ -61,7 +64,7 @@
 
     function generateOutput() {
         let adjustmentUnits = (bg - target) / sensitivity;
-        let bolusUnits = carbs / carbRatio;
+        let bolusUnits = (carbs ** carbMod) / carbRatio;
         let totalUnits = adjustmentUnits + bolusUnits;
 
         let insTimeVar = insTime / (totalUnits ** insTimeSens);
@@ -97,6 +100,9 @@
     <form>
         <label for="carbRatio">Carb ratio (g/U)</label>
         <input type="number" name="carbRatio" bind:value={carbRatio}><br>
+
+        <label for="carbMod">Carb modifier (if you don't know what this is, set it to 1)</label>
+        <input type="number" name="carbMod" bind:value={carbMod}><br>
 
         <label for="sensitivity">Insulin sensitivity (mmol/U)</label>
         <input type="number" name="sensitivity" bind:value={sensitivity}><br>
